@@ -1,0 +1,18 @@
+<div class="close-container"><mat-icon (click)="close()">close</mat-icon></div>
+
+<h4>Car Inventory Detail</h4>
+
+<table>
+  <tr>
+    <th>Manufacturer</th>
+    <th>Model</th>
+    <th>Sale Status</th>
+  </tr>
+  <tr *ngFor="let x of rowData; let i = index">
+    <td *ngIf="x?.manufacturer">{{x?.manufacturer}}</td>
+    <td *ngIf="x?.model">{{x?.model}}</td>
+    <td *ngIf="x?.model" class="sold-link" (click)="soldCar(i)">Sold</td>
+  </tr>
+</table>
+
+

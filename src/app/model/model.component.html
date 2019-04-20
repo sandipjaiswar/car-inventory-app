@@ -1,0 +1,20 @@
+<div class="model-container">
+  <mat-form-field class="model-input-field">
+    <input matInput placeholder="Add Model" [formControl]="model" value="">
+  </mat-form-field>
+
+
+  <form class="manufacturer-form">
+      <mat-form-field class="manufacturer-full-width">
+        <input type="text" placeholder="Manufacturer" aria-label="Manufacturer" matInput [formControl]="manufacturer" [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+          <mat-option *ngFor="let option of options" [value]="option">
+            {{option.manufacturername}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+</div>
+<div>
+  <button type="button" mat-raised-button [disabled]="!model.value" (click)="submit()">Submit</button>
+</div>

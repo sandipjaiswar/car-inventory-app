@@ -1,0 +1,16 @@
+.model-input-field {
+    margin-right: 12px;
+}
+
+.my-full-width-menu {
+    padding: 8px;
+    list-style: none;
+}
+
+.my-full-width-menu>li {
+    padding: 8px;
+}
+
+.model-container {
+    display: flex;
+}

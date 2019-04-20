@@ -1,0 +1,7 @@
+<div class="manufacturer">
+  <mat-form-field class="manufacturer-input-field">
+    <input matInput placeholder="Add Manufacturer" [formControl]="manufacturerName" value="">
+  </mat-form-field>
+  <button type="button" mat-raised-button [disabled]="!manufacturerName.value" (click)="submit()">Add
+    Manufacturer</button>
+</div>

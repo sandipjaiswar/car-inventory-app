@@ -1,0 +1,18 @@
+<div class="menu">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/manufacturer">
+            Add Manufacturer
+        </button>
+        <button mat-menu-item routerLink="/model">
+            Add Model
+        </button>
+        <button mat-menu-item routerLink="/view-inventory">
+            View Inventory
+        </button>
+    </mat-menu>
+</div>
+<router-outlet></router-outlet>
+<!-- Routed components go here -->
