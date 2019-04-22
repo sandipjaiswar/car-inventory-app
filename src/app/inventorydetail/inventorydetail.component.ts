@@ -10,6 +10,7 @@ import { DatabaseComponent } from '../database/database.component';
 export class InventorydetailComponent implements OnInit {
   count: number;
   rowData: any[] = [];
+  index: number;
   constructor(public dialogRef: MatDialogRef<DatabaseComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
@@ -21,12 +22,14 @@ export class InventorydetailComponent implements OnInit {
   }
 
   soldCar(index) {
+    this.index = index;
     this.count = this.count - 1;
     this.rowData[index] = null;
   }
 
   close() {
     this.data.count = this.count;
+    // this.data[this.index].soldstatus = 1;
     this.dialogRef.close(this.data);
   }
 }

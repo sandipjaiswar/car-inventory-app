@@ -9,9 +9,9 @@
     <th>Sale Status</th>
   </tr>
   <tr *ngFor="let x of rowData; let i = index">
-    <td *ngIf="x?.manufacturer">{{x?.manufacturer}}</td>
-    <td *ngIf="x?.model">{{x?.model}}</td>
-    <td *ngIf="x?.model" class="sold-link" (click)="soldCar(i)">Sold</td>
+    <td *ngIf="x?.manufacturername">{{x?.manufacturername}}</td>
+    <td *ngIf="x?.modelname">{{x?.modelname}}</td>
+    <td *ngIf="x?.modelname" class="sold-link" (click)="soldCar(i)">Sold</td>
   </tr>
 </table>
 

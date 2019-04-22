@@ -19,6 +19,9 @@ import { NotificationComponent } from './notification/notification.component';
 import { MatTableModule } from '@angular/material/table';
 import { InventorydetailComponent } from './inventorydetail/inventorydetail.component';
 import { MatDialogModule } from '@angular/material/dialog'
+import {MatCardModule} from '@angular/material/card';
+import {MatDatepickerModule, MatDatepicker} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -43,9 +46,13 @@ import { MatDialogModule } from '@angular/material/dialog'
     MatAutocompleteModule,
     MatSnackBarModule,
     MatTableModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCardModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    // MatMomentDateModule
   ],
-  providers: [],
+  providers: [MatDatepickerModule, MatDatepicker],
   entryComponents: [NotificationComponent, InventorydetailComponent],
   bootstrap: [AppComponent]
 })

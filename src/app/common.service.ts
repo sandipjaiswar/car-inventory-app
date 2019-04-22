@@ -27,7 +27,21 @@ export class CommonService {
   }
 
   addModel(model): Observable<any> {
-    return this.http.post(`${this.apiUrl}/addModel.php`, JSON.stringify(model))
+    return this.http.post(`${this.apiUrl}/create.php`, JSON.stringify(model))
+      .pipe(
+        catchError((this.handleError))
+      );
+  }
+
+  fetchInventory() {
+    return this.http.get(`${this.apiUrl}/read.php`)
+      .pipe(
+        catchError((this.handleError))
+      );
+  }
+
+  soldCar(model): Observable<any> {
+    return this.http.post(`${this.apiUrl}/deleteOne.php`, JSON.stringify(model))
       .pipe(
         catchError((this.handleError))
       );

@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiEndpoint: 'http://localhost:4040/carInventory/api/car'
+  apiEndpoint: 'https://carinventoryapi.000webhostapp.com/car'
+  // apiEndpoint: 'https://carinventoryapi.000webhostapp.com/car'
 };
 
 /*

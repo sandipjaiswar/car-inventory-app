@@ -1,10 +1,51 @@
 <div class="model-container">
-  <mat-form-field class="model-input-field">
+
+  <form [formGroup]="carForm" (ngSubmit)="onSubmit()">
+
+    <mat-form-field class="model-input-field">
+      <input type="text" matInput placeholder="Add Model" formControlName="model">
+    </mat-form-field>
+
+    <mat-form-field class="manufacturer-full-width">
+      <input type="text" placeholder="Manufacturer" aria-label="Manufacturer" matInput formControlName="manufacturer"
+        [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+        <mat-option *ngFor="let option of options" [value]="option">
+          {{option.manufacturername}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="model-input-field">
+      <input type="text" matInput placeholder="Add Color" formControlName="color">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" formControlName="manufacturingyear"
+        placeholder="Choose a manufacturing year">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="model-input-field">
+      <input type="text" matInput placeholder="Add Registration no" formControlName="registrationno">
+    </mat-form-field>
+
+    <mat-form-field class="model-input-field">
+      <input type="text" matInput placeholder="Add Note" formControlName="note">
+    </mat-form-field>
+
+    <button type="submit" mat-raised-button [disabled]="!carForm.valid">Submit</button>
+
+  </form>
+
+
+  <!-- <mat-form-field class="model-input-field">
     <input matInput placeholder="Add Model" [formControl]="model" value="">
   </mat-form-field>
 
 
-  <form class="manufacturer-form">
+  <form [formGroup]="carForm" class="manufacturer-form">
       <mat-form-field class="manufacturer-full-width">
         <input type="text" placeholder="Manufacturer" aria-label="Manufacturer" matInput [formControl]="manufacturer" [matAutocomplete]="auto">
         <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
@@ -14,7 +55,7 @@
         </mat-autocomplete>
       </mat-form-field>
     </form>
-</div>
-<div>
-  <button type="button" mat-raised-button [disabled]="!model.value" (click)="submit()">Submit</button>
+</div> -->
+  <!-- <div>-->
+  <!-- <button type="button" mat-raised-button [disabled]="!model.value" (click)="submit()">Submit</button> -->
 </div>
